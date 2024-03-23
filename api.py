@@ -12,7 +12,7 @@ import sys
 
 # Get date from command-line argument
 if len(sys.argv) < 2:
-    print("Usage: python script.py <YYYY-MM-DD>")
+    print("Usage: python api.py <YYYY-MM-DD>")
     sys.exit(1)
 
 load_dotenv()
