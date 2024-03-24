@@ -4,6 +4,7 @@ import { Client } from 'discord.js';
 // import commandsBuider + commands
 import commandsBuilder from "./commandsBuilder";
 import apod from './commands/apod';
+import facts from './commands/facts';
 import jarjar from './commands/jarjar';
 import newletter from './commands/newletter';
 import ping from './commands/ping';
@@ -29,6 +30,7 @@ client.on("interactionCreate", async (interaction) => {
 
     ping(interaction);
     apod(interaction);
+    facts(interaction);
     jarjar(interaction);
     newletter(interaction);
 });
