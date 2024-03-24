@@ -21,7 +21,8 @@ TITLE_X = 648
 TITLE_Y = 188
 DATE_POS = (109, 973)
 TEXT_SIZE = 48
-OUTPUT_DIRECTORY = "./images/APOD"
+OUTPUT_DIRECTORY = "../images/APOD/"
+TEMPLATE_PATH = "../images/APOD/template2.jpg"
 
 # Function to fetch data from NASA APOD API
 def fetch_apod_data(date):
@@ -46,7 +47,7 @@ def create_apod_template(data, date):
     iod_page = f"https://apod.nasa.gov/apod/ap{page_date}.html"
     qr = qrcode.make(iod_page)
 
-    template_image = Image.open("template.jpg")
+    template_image = Image.open(TEMPLATE_PATH)
     image_url = data['hdurl']
     image_response = requests.get(image_url)
 
