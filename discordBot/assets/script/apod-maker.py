@@ -22,7 +22,7 @@ TITLE_Y = 188
 DATE_POS = (109, 973)
 TEXT_SIZE = 48
 OUTPUT_DIRECTORY = "../images/APOD/"
-TEMPLATE_PATH = "../images/APOD/template2.jpg"
+TEMPLATE_PATH = "../images/APOD/template.jpg"
 
 # Function to fetch data from NASA APOD API
 def fetch_apod_data(date):
