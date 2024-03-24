@@ -21,8 +21,8 @@ TITLE_X = 648
 TITLE_Y = 188
 DATE_POS = (109, 973)
 TEXT_SIZE = 48
-OUTPUT_DIRECTORY = "../images/APOD/"
-TEMPLATE_PATH = "../images/APOD/template.jpg"
+OUTPUT_DIRECTORY = "./assets/images/APOD/"
+TEMPLATE_PATH = "./assets/script/template.jpg"
 
 # Function to fetch data from NASA APOD API
 def fetch_apod_data(date):
@@ -69,7 +69,7 @@ def create_apod_template(data, date):
     title_pos = (TITLE_X - (len(title) * 10), TITLE_Y)
 
     draw = ImageDraw.Draw(template_image)
-    font = ImageFont.truetype("LeagueSpartan-Bold.ttf", size=TEXT_SIZE)
+    font = ImageFont.truetype("./assets/script/LeagueSpartan-Bold.ttf", size=TEXT_SIZE)
     draw.text(title_pos, title, fill="white", font=font)
     draw.text(DATE_POS, date, fill="white", font=font)
 
