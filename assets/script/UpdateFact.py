@@ -61,7 +61,7 @@ jsonFile = writeFile(fileName)
 action = sys.argv[1]
 if action == "add":
     user = sys.argv[2]
-    newAnecdote = f"Ceci est une nouvelle anecdote pour {user}"
+    newAnecdote = sys.argv[3]
     addAnecdote(user, newAnecdote, jsonFile)
     print(f"[{user}] {newAnecdote}")
 elif action == "get":
@@ -71,7 +71,7 @@ elif action == "get":
         if anecdote:
             available_anecdote_found = True
             anecdote["utilise"] = False
-            print(f"[{user}] {anecdote['anecdote']}")  #------ mettre ici la fonction qui aura besoin de l'anecdote
+            print(f"[By {user}] \n{anecdote['anecdote']}")  #------ mettre ici la fonction qui aura besoin de l'anecdote
             break
     if not available_anecdote_found:
         print("No available anecdotes.")
