@@ -1,24 +1,20 @@
 # JAM_NASA_BOT
 
-This project aims to create a tool for fetching images from NASA's API and embedding them onto a template image along with relevant text. It consists of two main scripts, `paste-image-to-template` and `api`, each serving distinct functionalities.
+This project aims to create a tool for fetching images from NASA's API and embedding them onto a template image along with relevant text. It consists of one script, `apod-maker.py`, which generate a .jpg file with a date as argument.
 
 ## Features
 
-- Fetches data from NASA API including image URL, title, description, and copyright information.
+- Fetches data from NASA API including image URL, title and a QR code of the page of the new.
 - Downloads the image from the provided URL.
 - Embeds the fetched image onto a template image.
-- Adds text overlay containing title, description, and copyright information to the final image.
+- Adds text overlay containing title, date, and a generated qrcode of the news.
 - Saves the processed image as a JPEG file.
 
 ## Usage
 
-### `paste-image-to-template`
+### `apod-maker.py`
 
-This script fetches data from NASA's API, downloads the image, pastes it onto a template image, adds relevant text, and saves the final image.
-
-### `api`
-
-This script fetches data from NASA's API using environment variables for authentication and date specification. It retrieves the title, image URL, and description of the NASA image of the day and saves them into separate files.
+This script fetches data from NASA's API, downloads the image, pastes it onto a template image, adds relevant text, the date passed as argument and a generated QR code, and saves the final image.
 
 ## Prerequisites
 
@@ -26,6 +22,8 @@ This script fetches data from NASA's API using environment variables for authent
 - Pillow library (for image processing)
 - Requests library (for making HTTP requests)
 - Python-dotenv library (for loading environment variables)
+- Python-qrcode library (for qrcode generation)
+(check requirement.txt)
 
 ## Setup
 
