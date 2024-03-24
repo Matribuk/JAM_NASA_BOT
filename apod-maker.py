@@ -21,6 +21,7 @@ TITLE_X = 648
 TITLE_Y = 188
 DATE_POS = (109, 973)
 TEXT_SIZE = 48
+OUTPUT_DIRECTORY = "./images/APOD"
 
 # Function to fetch data from NASA APOD API
 def fetch_apod_data(date):
@@ -72,7 +73,8 @@ def create_apod_template(data, date):
     draw.text(DATE_POS, date, fill="white", font=font)
 
     iod_name = f"iod-{date}.jpg"
-    template_image.save(iod_name, "JPEG")
+    output_path = os.path.join(OUTPUT_DIRECTORY, iod_name)
+    template_image.save(output_path, "JPEG")
 
     print("Image processing complete.")
 
@@ -85,5 +87,4 @@ if __name__ == "__main__":
     apod_data = fetch_apod_data(date)
 
     if apod_data:
-        # save_apod_data(apod_data, date)
         create_apod_template(apod_data, date)
