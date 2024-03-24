@@ -18,10 +18,10 @@ client.on("interactionCreate", async (interaction) => {
         await interaction.reply("Pong!");
     }
     if (interaction.commandName === "jarjar") {
-        await interaction.reply({files: ["./assets/jamPic/jarjar.png"]});
+        await interaction.reply({files: ["./assets/images/jamPic/jarjar.png"]});
     }
     if (interaction.commandName === "apod") {
-        await interaction.reply({files: ["./assets/APOD/template2.jpg"]});
+        await interaction.reply({files: ["./assets/images/APOD/template2.jpg"]});
     }
     if (interaction.commandName === "newletter") {
         await interaction.reply("Not available yet")
