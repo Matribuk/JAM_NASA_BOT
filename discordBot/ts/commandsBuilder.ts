@@ -7,21 +7,27 @@ const token = `${process.env.DISCORD_TOKEN}`;
 
 const commandsBuilder = [
     {
-        name: "ping",
-        description: "Replies with Pong!"
+        name: "apod",
+        description: "Show you the Astronomy Picture Of The Day (By NASA)",
+        options: [{
+            name: "date",
+            description: "YYYY-MM-DD",
+            type: 3,
+            require: false
+        }]
     },
     {
         name: "jarjar",
         description: "Show you a beautiful picture ;)"
     },
     {
-        name: "apod",
-        description: "Show you the Astronomy Picture Of The Day (By NASA)"
-    },
-    {
         name: "newletter",
         description: "Not available yet"
-    }
+    },
+    {
+        name: "ping",
+        description: "Replies with Pong!"
+    },
 ];
 
 const rest = new REST({ version: "9" }).setToken(token);
