@@ -1,6 +1,7 @@
-*.env
-node_modules
 .vscode
-static
 iod-*
 idk
+.env
+package-lock.json
+node_modules
+static
