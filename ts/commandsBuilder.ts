@@ -8,7 +8,7 @@ const token = `${process.env.DISCORD_TOKEN}`;
 const commandsBuilder = [
     {
         name: "apod",
-        description: "Show you the Astronomy Picture Of The Day (By NASA)",
+        description: "Shows you the Astronomy Picture Of The Day (By NASA)",
         options: [{
             name: "date",
             description: "YYYY-MM-DD",
@@ -17,8 +17,32 @@ const commandsBuilder = [
         }]
     },
     {
+        name: "fact",
+        description: "Shows you a random space fact of our database !",
+    },
+    {
+        name: "newfact",
+        description: "Add a fact you knows with you username to our database (heavily moderated)",
+        options: [{
+            name: "fact",
+            description: "enter your fact here (Your username will be add automatically)",
+            type: 3,
+            require: true
+        }]
+    },
+    // {
+    //     name: "removefact",
+    //     description: "Remove a fact of yours of our database",
+    //     options: [{
+    //         name: "index",
+    //         description: "enter the index (1 for the first etc...) of your fact here",
+    //         type: 3,
+    //         require: true
+    //     }]
+    // },
+    {
         name: "jarjar",
-        description: "Show you a beautiful picture ;)"
+        description: "Shows you a beautiful picture ;)"
     },
     {
         name: "newletter",
