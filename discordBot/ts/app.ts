@@ -1,31 +1,37 @@
 import 'dotenv/config';
 import { Client } from 'discord.js';
-import commandsBuilder from "./commandsBuilder";
 
+// import commandsBuider + commands
+import commandsBuilder from "./commandsBuilder";
+import apod from './commands/apod';
+import jarjar from './commands/jarjar';
+import newletter from './commands/newletter';
+import ping from './commands/ping';
+
+// Format date of the day
+const date = new Date();
+export const formattedDate = `${date.getFullYear()}-0${date.getMonth() + 1}-${date.getDate()}`;
+
+// init discord client
 const client = new Client({
     intents: ['Guilds', 'GuildMessages', 'GuildMembers', 'MessageContent']
 });
 
+// init bot first command
 client.on('ready', (c) => {
     commandsBuilder;
     console.log(`${c.user.username} is online.`);
 });
 
+// discord bot interactions
 client.on("interactionCreate", async (interaction) => {
 	if (!interaction.isCommand()) return;
 
-    if (interaction.commandName === "ping") {
-        await interaction.reply("Pong!");
-    }
-    if (interaction.commandName === "jarjar") {
-        await interaction.reply({files: ["./assets/images/jamPic/jarjar.png"]});
-    }
-    if (interaction.commandName === "apod") {
-        await interaction.reply({files: ["./assets/images/APOD/template2.jpg"]});
-    }
-    if (interaction.commandName === "newletter") {
-        await interaction.reply("Not available yet")
-    }
+    ping(interaction);
+    apod(interaction);
+    jarjar(interaction);
+    newletter(interaction);
 });
 
+// discord bot login
 client.login(process.env.DISCORD_TOKEN);
