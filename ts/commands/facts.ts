@@ -15,7 +15,7 @@ async function facts(interaction: any) {
         else {
             const arg = interaction.options.get('fact').value;
             await interaction.deferReply();
-            exec(`python3 ./assets/script/UpdateFact.py add ${interaction.user.globalName} ${arg}`, async (error, stdout, stderr) => {
+            exec(`python3 ./assets/script/UpdateFact.py add ${interaction.user.globalName} "${arg}"`, async (error, stdout, stderr) => {
                 console.log(stdout);
                 await interaction.editReply("Fact as been added to our database !");
             });
