@@ -4,8 +4,8 @@ import { exec } from "child_process";
 async function apod(interaction: any) {
     if (interaction.commandName === "apod") {
         if (!interaction.options.get('date')) {
+            await interaction.deferReply();
             exec(`python3 ./assets/script/apod-maker.py ${formattedDate}`, async (error, stdout, stderr) => {
-                await interaction.deferReply();
                 console.log(stdout);
                 if (!(stdout == "Image processing complete.\n"))
                     await interaction.editReply("Astronomy Picture Of The Day is not available yet");
